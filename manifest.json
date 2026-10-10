@@ -1,0 +1,12 @@
+{
+    "id": "b4924fa0-8bc6-441b-acee-09ca3c96ce03",
+    "authors": [
+        "Hydrocut",
+        "TeamKit"
+    ],
+    "origin": "https://github.com/hydrocut/AMPTemplates-Simutrans.git",
+    "url": "https://github.com/hydrocut/AMPTemplates-Simutrans",
+    "imagefile": "",
+    "prefix": "TeamKitSimutrans",
+    "repotype": "AppTemplates"
+}

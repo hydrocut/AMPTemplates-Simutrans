@@ -1,0 +1,188 @@
+[
+    {
+        "DisplayName": "Port du jeu",
+        "Category": "Simutrans:train",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "",
+        "Keywords": "",
+        "FieldName": "$GamePort",
+        "InputType": "number",
+        "Hidden": true,
+        "ExcludeFromImport": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Nom du serveur",
+        "Category": "Simutrans:train",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Le nom affiché dans la liste publique des serveurs Simutrans. Commencer par FR aide les francophones à te trouver : la liste est mondiale.",
+        "Keywords": "nom,name,serveur,server_name",
+        "FieldName": "server_name",
+        "InputType": "text",
+        "ParamFieldName": "server_name",
+        "DefaultValue": "FR TeamKit - Simutrans",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Description",
+        "Category": "Simutrans:train",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Une ligne de présentation, affichée dans la liste publique à côté du nom.",
+        "Keywords": "description,commentaire,server_comments",
+        "FieldName": "server_comments",
+        "InputType": "text",
+        "ParamFieldName": "server_comments",
+        "DefaultValue": "Serveur francophone heberge gratuitement par TeamKit.fr",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Lien d'information",
+        "Category": "Simutrans:train",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Site ou invitation Discord de ta communauté, affiché dans la liste publique.",
+        "Keywords": "lien,site,discord,url,server_infurl",
+        "FieldName": "server_infurl",
+        "InputType": "text",
+        "ParamFieldName": "server_infurl",
+        "DefaultValue": "https://teamkit.fr",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Fichier du message d'accueil",
+        "Category": "Simutrans:train",
+        "Subcategory": "Serveur:dns:1",
+        "Description": "Fichier texte (dans le dossier simutrans/) envoyé aux joueurs avec la partie quand ils rejoignent. Le template pose un motd.txt que tu peux modifier dans le gestionnaire de fichiers d'AMP ; Simutrans le relit à chaque arrivée. Vide = pas de message.",
+        "Keywords": "accueil,motd,message,bienvenue,server_motd_filename",
+        "FieldName": "server_motd_filename",
+        "InputType": "text",
+        "ParamFieldName": "server_motd_filename",
+        "DefaultValue": "motd.txt",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Pakset",
+        "Category": "Simutrans:train",
+        "Subcategory": "Partie:map:2",
+        "Description": "Le jeu de graphismes et de véhicules. Les joueurs doivent avoir EXACTEMENT le même pakset pour rejoindre. Après un changement : lance Update (pour le télécharger), puis Start. L'ancienne partie est rangée dans save/, car une partie ne passe pas d'un pakset à l'autre.",
+        "Keywords": "pakset,pak,pak64,pak128,graphismes",
+        "FieldName": "Pakset",
+        "InputType": "enum",
+        "DefaultValue": "pak",
+        "EnumValues": {
+            "pak": "pak64 - le pakset d'origine, léger (5 Mo)",
+            "pak128": "pak128 - plus détaillé, plus lourd (400 Mo installé)"
+        }
+    },
+    {
+        "DisplayName": "Langue du serveur",
+        "Category": "Simutrans:train",
+        "Subcategory": "Partie:map:2",
+        "Description": "Langue des messages envoyés par le serveur (« Bienvenue, Pseudo ! », « Pseudo est parti. ») et des noms de villes d'une nouvelle carte. Chaque joueur garde la langue de son propre jeu.",
+        "Keywords": "langue,language,lang",
+        "FieldName": "Langue",
+        "InputType": "enum",
+        "DefaultValue": "fr",
+        "EnumValues": {
+            "fr": "Français",
+            "en": "English",
+            "de": "Deutsch",
+            "es": "Español",
+            "it": "Italiano",
+            "nl": "Nederlands",
+            "pl": "Polski",
+            "pt": "Português"
+        }
+    },
+    {
+        "DisplayName": "Partie de départ",
+        "Category": "Simutrans:train",
+        "Subcategory": "Partie:map:2",
+        "Description": "Le serveur ne sait pas créer une carte à la taille voulue : sans partie, il génère une petite carte de 64 x 64. Pour une vraie carte, crée-la dans ton jeu Simutrans (même version, même pakset), sauvegarde-la, dépose le fichier .sve dans simutrans/save/ avec le gestionnaire de fichiers d'AMP et écris son nom ici, sans .sve. Elle est chargée au démarrage suivant, puis le serveur continue ses propres sauvegardes ; redéposer un fichier modifié sous le même nom le recharge. L'ancienne partie est toujours rangée dans save/, jamais effacée. Vide = continuer la partie en cours.",
+        "Keywords": "partie,sauvegarde,carte,map,taille,load,sve",
+        "FieldName": "PartieDepart",
+        "InputType": "text",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Annoncer le serveur publiquement",
+        "Category": "Simutrans:train",
+        "Subcategory": "Liste publique:public:3",
+        "Description": "Inscrit le serveur dans la liste publique de Simutrans (servers.simutrans-forum.de, à défaut servers.simutrans.org), visible dans la fenêtre Rejoindre un jeu de tous les joueurs. Remplis aussi l'adresse publique ci-dessous : c'est elle que la liste donne aux joueurs. Décoché, on entre seulement en tapant ip:port.",
+        "Keywords": "annonce,public,liste,server_announce",
+        "FieldName": "server_announce",
+        "InputType": "checkbox",
+        "ParamFieldName": "server_announce",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Adresse publique annoncée",
+        "Category": "Simutrans:train",
+        "Subcategory": "Liste publique:public:3",
+        "Description": "L'adresse IP publique (ou le nom de domaine) de la machine, sans le port. Indispensable pour l'annonce : dans un conteneur, Simutrans ne connaît que son adresse interne.",
+        "Keywords": "ip,adresse,dns,server_dns",
+        "FieldName": "server_dns",
+        "InputType": "text",
+        "ParamFieldName": "server_dns",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Intervalle d'annonce (secondes)",
+        "Category": "Simutrans:train",
+        "Subcategory": "Liste publique:public:3",
+        "Description": "Toutes les combien de secondes le serveur redit à la liste qu'il est en ligne. 900 = 15 minutes (défaut de Simutrans). Minimum 60 ; Simutrans conseille de ne pas dépasser 3600.",
+        "Keywords": "annonce,intervalle,server_announce_interval",
+        "FieldName": "server_announce_interval",
+        "InputType": "number",
+        "ParamFieldName": "server_announce_interval",
+        "DefaultValue": "900",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Sauvegarder la partie à l'arrêt",
+        "Category": "Simutrans:train",
+        "Subcategory": "Sauvegardes:save:4",
+        "Description": "À GARDER COCHÉ. Simutrans désactive la sauvegarde automatique mensuelle en multijoueur : sans ce réglage, un arrêt fait perdre tout ce qui s'est passé depuis l'arrivée du dernier joueur. Coché, le serveur enregistre la partie quand AMP l'arrête, et la reprend au démarrage suivant.",
+        "Keywords": "sauvegarde,arret,save,server_save_game_on_quit",
+        "FieldName": "server_save_game_on_quit",
+        "InputType": "checkbox",
+        "ParamFieldName": "server_save_game_on_quit",
+        "DefaultValue": "1",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Mettre en pause quand personne n'est connecté",
+        "Category": "Simutrans:train",
+        "Subcategory": "Sauvegardes:save:4",
+        "Description": "Coché : le monde s'arrête quand le dernier joueur part, et la partie est enregistrée à ce moment-là (moins de calcul, une sauvegarde de plus). Mais Simutrans n'écrit le départ de ce dernier joueur qu'au retour du suivant : AMP le croit encore en ligne jusque-là, ce qui fausse le compteur de joueurs et la détection d'inactivité. Décoché (défaut) : le monde tourne en continu, comme sur la plupart des serveurs Simutrans.",
+        "Keywords": "pause,vide,clients,pause_server_no_clients",
+        "FieldName": "pause_server_no_clients",
+        "InputType": "checkbox",
+        "ParamFieldName": "pause_server_no_clients",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Mot de passe d'administration (nettool)",
+        "Category": "Simutrans:train",
+        "Subcategory": "Administration:admin_panel_settings:5",
+        "Description": "Sert à nettool, l'outil d'administration en ligne de commande de Simutrans (liste des joueurs, expulser, bannir, message à tous, gestion des compagnies, arrêt). Vide = administration à distance désactivée. Il n'existe PAS de mot de passe pour entrer sur un serveur Simutrans : chaque joueur protège sa compagnie par son propre mot de passe, en jeu.",
+        "Keywords": "admin,mot,passe,password,nettool,server_admin_pw",
+        "FieldName": "server_admin_pw",
+        "InputType": "password",
+        "ParamFieldName": "server_admin_pw",
+        "DefaultValue": "",
+        "EnumValues": {}
+    }
+]

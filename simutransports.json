@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 13353,
+        "Ref": "GamePort",
+        "Name": "Port du jeu",
+        "Description": "Le seul port a ouvrir, en TCP (Simutrans n'utilise pas d'UDP). Les joueurs s'y connectent en tapant ip:port dans la fenetre Rejoindre un jeu ; c'est aussi le port annonce a la liste publique."
+    }
+]

@@ -1,0 +1,10 @@
+# Ce depot ne contient que le template : Simutrans, ses sources et les paksets
+# sont telecharges depuis SourceForge au moment de l'Update dans AMP.
+*.zip
+*.sve
+simutrans/
+compilation/
+__pycache__/
+
+# Notes internes de TeamKit (essais, etapes), pas dans le depot public
+FAISABILITE.md
